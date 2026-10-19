@@ -1,0 +1,19 @@
+IP y puerto: edita servidor.config.json.
+  "host": "0.0.0.0" = disponible en todas las IP de tu PC (recomendado).
+  "host": "192.168.1.50" = solo esa IP (debe ser una IP de tu PC).
+  "port": 3000 = puerto (si esta ocupado, cambia el numero).
+
+HTTPS (quita el aviso "sitio no seguro"):
+  1) Ejecuta CREAR_CERTIFICADO.bat 192.168.1.50 (tu IP).
+     El script usa, en este orden:
+       a) mkcert instalado en tu PC,
+       b) herramientas\mkcert.exe,
+       c) compila mkcert desde herramientas\mkcert-master si tienes Go (go.dev),
+       d) certificado autofirmado con openssl (el navegador pedira confirmar una vez).
+  2) Reinicia INICIAR_SERVIDOR.bat: usa https automaticamente si existe la carpeta certs.
+  Otros equipos deben instalar la CA de mkcert (rootCA.pem, carpeta de "mkcert -CAROOT") para no ver el aviso.
+  NUNCA compartas rootCA-key.pem. Las carpetas certs y herramientas no se sirven por la web.
+
+Roles: un administrador NO puede cambiar su propio rol (ni eliminarse). Otro administrador si puede.
+
+Para personas fuera de tu red con HTTPS real sin configurar: cloudflared tunnel --url http://localhost:3000
