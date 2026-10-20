@@ -1,1 +1,0 @@
-["admin"].forEach(n=>document.write('<script src="datos/cuentas/'+n+'.js"><\/script>'));
