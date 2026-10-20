@@ -1,0 +1,5 @@
+node_modules/
+datos/db.json
+datos/db.json.tmp
+certs/
+.env
