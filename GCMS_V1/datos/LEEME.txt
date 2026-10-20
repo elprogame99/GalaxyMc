@@ -1,6 +1,0 @@
-Carpeta de datos de GCMS.
-cuentas/<usuario>.js: un archivo por cuenta (nombre, usuario, rol, contraseña cifrada). Para cambiar el rol, edita la línea rol: "admin" o "user", guarda y abre la app.
-cuentas.js: lista de cuentas (la genera la app).
-gcms-datos.json: tablas y ajustes.
-Se actualizan al conectar la carpeta GCMS_V1 en Configuración.
-Cuenta inicial: admin / 1234 (cámbiala).
